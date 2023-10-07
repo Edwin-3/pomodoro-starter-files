@@ -1,0 +1,105 @@
+.container-wrapper {
+    width: 390px;
+    height: 500px;
+    background-color: beige;
+    position: relative;
+    padding-inline: 40px;
+    padding-top: 80px;
+}
+
+.nav-bar {
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #5796DB;
+
+}
+
+.content {
+    width: 90%;
+    height: 281px;
+    margin: 0 auto;
+    background-color: chocolate;
+}
+
+.music-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+}
+
+h4,
+h6,
+h5 {
+    margin: 0;
+}
+
+.timer {
+    padding: 10px;
+    background-color: #D4EAFF;
+    border-radius: 8px;
+    color: #636363;
+    font-family: Quicksand;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.32px;
+}
+
+h4 {
+    color: #616161;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.36px;
+}
+
+h6 {
+    color: #AAA;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.divider {
+    height: 6px;
+    width: 100%;
+    border-radius: 8px;
+    background: #616161;
+    margin-block: 16px 4px;
+}
+
+.music-time {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.time {
+    color: #7A7A7A;
+    font-family: Quicksand;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.32px;
+}
