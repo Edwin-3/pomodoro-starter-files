@@ -46,7 +46,7 @@ html {
     height: 55rem;
     background: linear-gradient(to right, #313234, #2f3031);
     box-shadow: 0 1rem 5rem rgba(0, 0, 0, 0.4);
-    border-radius: 3rem;
+    border-radius: 2rem;
     display: flex;
     flex-direction: column;
     padding: 2rem 2rem 0 2rem;
@@ -255,13 +255,13 @@ html {
 }
 
 .player-footer {
-    width: 60%;
+    width: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto;
     margin-bottom: 0;
-    background-color: #363A3D;
+    background-color: #272829;
     padding: 1rem;
     border-radius: 1rem 1rem 0 0;
 }
