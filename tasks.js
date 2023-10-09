@@ -28,16 +28,16 @@ window.addEventListener('load', () => {
         task_input_el.setAttribute("readonly", "readonly");
 
         const checkbox_el = document.createElement("i");
-        checkbox_el.classList.add('fa-solid', 'fa-circle');
+        checkbox_el.classList.add('fa-regular', 'fa-circle');
         checkbox_el.addEventListener("click", () => {
-            if (checkbox_el.classList.contains('fa-circle')) {
-                checkbox_el.classList.remove('fa-circle');
-                checkbox_el.classList.add('fa-circle-check');
+            if (checkbox_el.classList.contains('fa-regular')) {
+                checkbox_el.classList.remove('fa-regular');
+                checkbox_el.classList.add('fa-solid');
 
                 task_input_el.style.textDecoration = "line-through";
             } else {
-                checkbox_el.classList.remove('fa-circle-check');
-                checkbox_el.classList.add('fa-circle');
+                checkbox_el.classList.remove('fa-solid');
+                checkbox_el.classList.add('fa-regular');
 
                 task_input_el.style.textDecoration = "none";
             }
