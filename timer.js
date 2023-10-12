@@ -30,7 +30,6 @@ function handleMode(e) {
     stopTimer();
 }
 
-
 function switchMode(mode) {
     timer.mode = mode;
     timer.remainingTime = {
