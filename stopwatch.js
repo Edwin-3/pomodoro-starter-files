@@ -63,7 +63,6 @@ window.addEventListener('load', () => {
         } else {
             cover.innerHTML = '';
             cover.innerHTML = originalCoverHTML;
-            updatePomodoroDisplay("25", "00");
         }
 
     });
@@ -167,6 +166,8 @@ window.addEventListener('load', () => {
             mainButton.dataset.action = 'start';
             mainButton.textContent = 'start';
             mainButton.classList.remove('active');
+            updatePomodoroDisplay("25", "00");
+
         }
 
         function updateClock() {

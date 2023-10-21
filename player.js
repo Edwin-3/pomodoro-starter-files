@@ -127,3 +127,21 @@ songTime.addEventListener("click", (e) => {
   });
 
 audio.addEventListener("ended", nextSongPlay);
+
+
+
+const libraryPage = document.querySelector(".music-library");
+const playerFooter = document.querySelector('.player-footer');
+const closePage = document.querySelector('.close');
+
+
+const openLibrary = () => {
+    libraryPage.classList.toggle('active');
+} 
+
+const closeLibrary = () => {
+    libraryPage.classList.remove('active');
+} 
+playerFooter.addEventListener("click",openLibrary);
+closePage.addEventListener("click",closeLibrary);
+
