@@ -1,5 +1,5 @@
 window.addEventListener('load', () => {
-    const stopwatchIcon = document.querySelector('.fa-stopwatch');
+    const stopwatchIcon = document.querySelector('.pomodoro-timer');
     const cover = document.querySelector('.cover');
     const originalCoverHTML = cover.innerHTML;
     let isStopwatchVisible = false;
