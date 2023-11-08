@@ -11,11 +11,11 @@ window.addEventListener('load', () => {
     <div class="timer">
         <div class="button-group mode-buttons" id="js-mode-buttons">
             <button
-                data-mode="pomodoro"
+                data-mode="work"
                 class="button active mode-button"
                 id="js-pomodoro"
             >
-                Pomodoro
+                Work
             </button>
             <button
                 data-mode="shortBreak"

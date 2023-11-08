@@ -1,20 +1,20 @@
 @font-face {
     font-family: "Quesha";
-    src: url("/fonts/Quesha-gndR.ttf");
+    src: url("/assets/fonts/Quesha-gndR.ttf");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "DreamBig";
-    src: url("/fonts/Dreambig-axvza.ttf");
+    src: url("/assets/fonts/Dreambig-axvza.ttf");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Widie";
-    src: url("/fonts/WidieGusti-eZRMB.otf");
+    src: url("/assets/fonts/WidieGusti-eZRMB.otf");
     font-weight: normal;
     font-style: normal;
 }
@@ -65,6 +65,7 @@ html {
 
 .player-top .logo {
     font-family: "DreamBig";
+    font-style:oblique;
     font-size: 28px;
     text-transform: it;
     letter-spacing: 0.09em;

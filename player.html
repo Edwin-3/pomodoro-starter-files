@@ -1,37 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Player</title>
-    <link rel="stylesheet" href="player.css" />
-    <link rel="stylesheet" href="tasks.css" />
-    <link rel="stylesheet" href="stopwatch.css" />
+    <title>ZenFlow</title> <!-- Updated title -->
+    <link rel="stylesheet" href="/css/player.css" />
+    <link rel="stylesheet" href="/css/tasks.css" />
+    <link rel="stylesheet" href="/css/stopwatch.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=Roboto:wght@100;300;400;500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <div class="container">
         <div class="player">
             <div class="player-top">
-                
                 <span class="logo">ZenFlow</span>
                 <div class="pomodoro-timer">
                     <p class="text-gradient">25:00</p>
                 </div>
-                <!-- <i class="fas fa-arrow-left"></i> -->
-                <!-- <i class="fa-sharp fa-solid fa-stopwatch fa-fade fa-lg"></i>  -->
-                <!-- <button class="player-btn" type="button">
-                    <i class="fa-solid fa-hourglass-half"></i>
-                </button> -->
+                <!-- Add any icons or buttons you need here -->
             </div>
             <div class="player-body">
                 <div class="current-song">
@@ -49,13 +40,10 @@
             </div>
             <div class="song-info">
                 <div class="song-details">
-                    <span class="song-name text-gradient ">Fathela</span>
+                    <span class="song-name text-gradient">Fathela</span>
                     <span class="song-artist text-gradient">Nyashinski</span>
                 </div>
-                <!-- <div class="pomodoro-timer">
-                    <p class="text-gradient">25:00</p>
-                </div> -->
-                <i class="fa-solid fa-heart text-gradient"></i>
+                <!-- Include any relevant information or icons here -->
             </div>
             <div class="song-duration">
                 <div class="song-time">
@@ -86,46 +74,17 @@
                 </button>
             </div>
             <div class="player-footer">
-                <i class="fa-sharp fa-solid fa-music"></i>
-                <!-- <span>Listen to Spotify Music</span>
-                <i class="fa-sharp fa-solid fa-list"></i> -->
+                <i class="fas fa-music"></i>
+                <!-- Add any additional elements you need -->
             </div>
             <div class="music-library">
                 <i class="fas fa-arrow-left close"></i>
-                <div class="library-wrapper">
-                    <div class="card">
-                        <img src="/images/catlofi.jpg" alt="lofi"/>
-                        <h5>Song Title</h5>
-                        <p>Chilled | Afro | Jazz | Lofi</p>
-                    </div>
-                    <div class="card">
-                        <img src="/images/chilllofi.jpg" alt="lofi"/>
-                        <h5>Song Title</h5>
-                        <p>Chilled | Afro | Jazz | Lofi</p>
-                    </div>
-                    <div class="card">
-                        <img src="/images/gamingLofi.jpg" alt="lofi"/>
-                        <h5>Song Title</h5>
-                        <p>Chilled | Afro | Jazz | Lofi</p>
-                    </div>
-                    <div class="card">
-                        <img src="/images/codinglofi2.jpg" alt="lofi"/>
-                        <h5>Song Title</h5>
-                        <p>Chilled | Afro | Jazz | Lofi</p>
-                    </div>
-                    <div class="card">
-                        <img src="/images/codinglofi3.jpg" alt="lofi"/>
-                        <h5>Song Title</h5>
-                        <p>Chilled | Afro | Jazz | Lofi</p>
-                    </div>
+                <div class="library-wrapper" id="music-cards-container">
+                    <!-- Your music cards here -->
                 </div>
             </div>
         </div>
     </div>
-    <script src="./player.js"></script>
-    <script src="./tasks.js"></script>
-    <script src="./stopwatch.js"></script>
-
+    <script src="./script.js"></script>
 </body>
-
 </html>

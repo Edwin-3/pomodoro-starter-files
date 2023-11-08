@@ -1,25 +1,28 @@
-const songData = [{
-    name: "Fathela",
-    artist: "Nyashinski",
-    src: "song1",
-},
-{
-    name: "Into You",
-    artist: "Fabolous ft Tamia",
-    src: "song2",
-},
-{
-    name: "Dream",
-    artist: "Judy Botcher",
-    src: "song3",
+// const songData = [{
+//     name: "Fathela",
+//     artist: "Nyashinski",
+//     src: "song1",
+// },
+// {
+//     name: "Into You",
+//     artist: "Fabolous ft Tamia",
+//     src: "song2",
+// },
+// {
+//     name: "Dream",
+//     artist: "Judy Botcher",
+//     src: "song3",
 
-},
-{
-    name: "Too Easy",
-    artist: "Bien ft Dj Edu",
-    src: "song4",
-},
-];
+// },
+// {
+//     name: "Too Easy",
+//     artist: "Bien ft Dj Edu",
+//     src: "song4",
+// },
+// ];
+
+const songData = musicData;
+console.log(songData);
 
 const container = document.querySelector(".container");
 const songName = document.querySelector(".song-name");
@@ -45,7 +48,7 @@ const loadSong = (index) => {
     // coverArtist.textContent = songData[index].artist;
     songName.textContent = songData[index].name;
     songArtist.textContent = songData[index].artist;
-    audio.src = `music/${songData[index].src}.mp3`;
+    audio.src = `assets/music/${songData[index].src}.mp3`;
 };
 
 const playSong = () => {
