@@ -65,7 +65,7 @@ html {
 
 .player-top .logo {
     font-family: "DreamBig";
-    font-style:oblique;
+    font-style: oblique;
     font-size: 28px;
     text-transform: it;
     letter-spacing: 0.09em;
@@ -293,7 +293,7 @@ html {
     left: 0;
     top: 100%;
     border-radius: 2rem;
-    padding: 2rem;
+    padding: 0 2rem 2rem 2rem;
     transition: top 0.5s ease-in-out;
 }
 
@@ -302,10 +302,22 @@ html {
 
 }
 
+.music-library .back_btn {
+    width: 30%;
+    background: linear-gradient(to right, #313234, #2f3031);
+    margin: auto;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 0 0 1rem 1rem;
+}
+
 .music-library i {
     font-size: 2rem;
     color: rgba(255, 255, 255, 0.4);
-    margin-bottom: 1rem;
+    margin-inline: auto;
 }
 
 .library-wrapper {
@@ -315,9 +327,10 @@ html {
     gap: 1rem;
     margin-top: auto;
     overflow-y: auto;
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
     height: 100%;
     -ms-overflow-style: none;
+
 
 }
 

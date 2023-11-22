@@ -1,36 +1,17 @@
-// const songData = [{
-//     name: "Fathela",
-//     artist: "Nyashinski",
-//     src: "song1",
-// },
-// {
-//     name: "Into You",
-//     artist: "Fabolous ft Tamia",
-//     src: "song2",
-// },
-// {
-//     name: "Dream",
-//     artist: "Judy Botcher",
-//     src: "song3",
-
-// },
-// {
-//     name: "Too Easy",
-//     artist: "Bien ft Dj Edu",
-//     src: "song4",
-// },
-// ];
-
+//musicData from music_library.js
 const songData = musicData;
-console.log(songData);
 
 const container = document.querySelector(".container");
 const songName = document.querySelector(".song-name");
 const songArtist = document.querySelector(".song-artist");
 const cover = document.querySelector(".cover");
+
+//music controls
 const playPauseBtn = document.querySelector(".play-pause");
 const prevBtn = document.querySelector(".prev-btn");
 const nextBtn = document.querySelector(".next-btn");
+
+//
 const audio = document.querySelector(".audio");
 const songTime = document.querySelector(".song-time");
 const songProgress = document.querySelector(".song-progress");
@@ -44,8 +25,6 @@ window.addEventListener("load", () => {
 })
 
 const loadSong = (index) => {
-    // coverName.textContent = songData[index].name;
-    // coverArtist.textContent = songData[index].artist;
     songName.textContent = songData[index].name;
     songArtist.textContent = songData[index].artist;
     audio.src = `assets/music/${songData[index].src}.mp3`;
@@ -53,13 +32,11 @@ const loadSong = (index) => {
 
 const playSong = () => {
     container.classList.add('pause');
-    cover.classList.add("rotate");
     playPauseBtn.firstElementChild.className = "fa-solid fa-pause";
     audio.play();
 };
 const pauseSong = () => {
     container.classList.remove('pause');
-    cover.classList.remove("rotate");
     playPauseBtn.firstElementChild.className = "fa-solid fa-play";
     audio.pause();
 };
@@ -86,6 +63,7 @@ const prevSongPlay = () => {
 
 const nextSongPlay = () => {
     songIndex++;
+    console.log("Song Index:" + songIndex)
     if (songIndex === songData.length) {
         songIndex = 0;
     }
@@ -125,26 +103,37 @@ songTime.addEventListener("click", (e) => {
     let clickedOffsetX = e.offsetX;
     let songDuration = audio.duration;
     audio.currentTime = (clickedOffsetX / progressWidth) * songDuration;
-  
+
     playSong();
-  });
+});
 
 audio.addEventListener("ended", nextSongPlay);
 
 
-
+//Music Library
 const libraryPage = document.querySelector(".music-library");
 const playerFooter = document.querySelector('.player-footer');
-const closePage = document.querySelector('.close');
-
+const closePage = document.querySelector('.back_btn');
+const cards = document.querySelectorAll('.library-wrapper .card');
 
 const openLibrary = () => {
     libraryPage.classList.toggle('active');
-} 
+}
 
 const closeLibrary = () => {
     libraryPage.classList.remove('active');
-} 
-playerFooter.addEventListener("click",openLibrary);
-closePage.addEventListener("click",closeLibrary);
+}
+
+const playSelectedCard = (index) => {
+    songIndex = index;
+    console.log("SELECTED CARD" + songIndex);
+    loadSong(index);
+    playSong();
+}
+
+playerFooter.addEventListener("click", openLibrary);
+closePage.addEventListener("click", closeLibrary);
+cards.forEach((card, index) => (
+    card.addEventListener("click", () => playSelectedCard(index))
+));
 

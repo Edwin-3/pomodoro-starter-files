@@ -1,0 +1,82 @@
+:root {
+    --carouselwhite: rgba(255, 255, 255, 1);
+    --carouselgray: rgba(153, 153, 153, 1);
+    --smooth-shadow: 0px 0.996212363243103px 2.2138051986694336px 0px rgba(0, 0, 0, 0.02),
+        0px 2.3940367698669434px 5.32008171081543px 0px rgba(0, 0, 0, 0.03),
+        0px 4.507758617401123px 10.017241477966309px 0px rgba(0, 0, 0, 0.04),
+        0px 8.041070938110352px 17.869047164916992px 0px rgba(0, 0, 0, 0.04),
+        0px 15.039938926696777px 33.422088623046875px 0px rgba(0, 0, 0, 0.05), 0px 36px 80px 0px rgba(0, 0, 0, 0.07);
+}
+
+body {
+    background-color: #121212;
+}
+
+.carousel {
+    display: flex;
+    flex-direction: column;
+    width: 716px;
+    height: 280.78px;
+    align-items: center;
+    gap: 12.03px;
+    padding: 20.06px 32.09px;
+    position: relative;
+}
+
+.carousel .slides-box {
+    position: relative;
+    flex: 1;
+    align-self: stretch;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.carousel .slides-navigation {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4.01px;
+    padding: 4.01px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.carousel .click-area {
+    display: inline-flex;
+    align-items: flex-start;
+    padding: 4.01px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.carousel .img {
+    position: relative;
+    width: 12.03px;
+    height: 12.03px;
+}
+
+.carousel .slide-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 5.01px;
+    padding: 4.01px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.carousel .dot-indictaor {
+    position: relative;
+    width: 8.02px;
+    height: 8.02px;
+    background-color: #7b61ff;
+    border-radius: 4.01px;
+}
+
+.carousel .div {
+    position: relative;
+    width: 6.02px;
+    height: 6.02px;
+    background-color: var(--carouselgray);
+    border-radius: 3.01px;
+    opacity: 0.5;
+}

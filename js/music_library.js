@@ -5,16 +5,79 @@ const musicData = [
         name: 'Song 1',
         artist: "Nyashinski",
         description: 'Chilled | Afro | Jazz | Lofi',
-        src: "song1",   
+        src: "song1",
     },
     {
-        imgSrc: '/assets/images/chilllofi.jpg',
+        imgSrc: '/assets/images/codinglooofi.jpg',
         name: 'Song 2',
         artist: "Urban",
         description: 'Chilled | Afro | Jazz | Lofi',
         src: "song2",
     },
-    // Add more music data entries as needed
+    {
+        imgSrc: '/assets/images/Afro anime art.jfif',
+        name: 'Song 3',
+        artist: "Urban",
+        description: 'Chilled | Afro | Jazz | Lofi',
+        src: "song2",
+    },
+    {
+        imgSrc: '/assets/images/codinglofi.jpg',
+        name: 'Song 4',
+        artist: "Urban",
+        description: 'Chilled | Reggae | Lofi',
+        src: "song2",
+    },
+    {
+        imgSrc: '/assets/images/gamingLofi.jpg',
+        name: 'Song 5',
+        artist: "Urban",
+        description: 'Chilled | Afro | Jazz | Lofi',
+        src: "song2",
+    },
+    {
+        imgSrc: '/assets/images/mother earth.jfif',
+        name: 'Song 6',
+        artist: "Urban",
+        description: 'Chilled | Afro | Jazz | Lofi',
+        src: "song2",
+    },
+    {
+        imgSrc: '/assets/images/kid lofi.jfif',
+        name: 'Song 7',
+        artist: "Urban",
+        description: 'Chilled | Afro | Jazz | Lofi',
+        src: "song2",
+    },
+    {
+        imgSrc: '/assets/images/lovelofi.jfif',
+        name: 'Song 8',
+        artist: "Urban",
+        description: 'Chilled | Afro | Jazz | Lofi',
+        src: "contour",
+    },
+    {
+        imgSrc: '/assets/images/desktop.jpg',
+        name: 'Song 9',
+        artist: "Urban",
+        description: 'Chilled | Afro | Jazz | Lofi',
+        src: "song2",
+    },
+    {
+        imgSrc: '/assets/images/afro lofi.jfif',
+        name: 'Song 10',
+        artist: "Urban",
+        description: 'Chilled | Afro | Jazz | Lofi',
+        src: "song2",
+    },
+    {
+        imgSrc: '/assets/images/Afro anime art.jfif',
+        name: 'Song 10',
+        artist: "Urban",
+        description: 'Chilled | Afro | Jazz | Lofi',
+        src: "song2",
+    },
+
 ];
 
 // Reference to the music cards container
@@ -40,4 +103,5 @@ musicData.forEach((data) => {
     card.appendChild(description);
 
     musicCardsContainer.appendChild(card);
+
 });
