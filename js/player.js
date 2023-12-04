@@ -1,5 +1,5 @@
-//musicData from music_library.js
-const songData = musicData;
+//Create a copy of the original array
+const songData = musicData.slice();
 
 const container = document.querySelector(".container");
 const songName = document.querySelector(".song-name");
@@ -10,8 +10,12 @@ const cover = document.querySelector(".cover");
 const playPauseBtn = document.querySelector(".play-pause");
 const prevBtn = document.querySelector(".prev-btn");
 const nextBtn = document.querySelector(".next-btn");
+const repeatBtn = document.querySelector(".repeat");
+const shuffleBtn = document.querySelector(".shuffle");
+const volumeSlider = document.getElementById('volumeSlider');
 
-//
+
+//music display
 const audio = document.querySelector(".audio");
 const songTime = document.querySelector(".song-time");
 const songProgress = document.querySelector(".song-progress");
@@ -19,6 +23,10 @@ const coverArtist = document.querySelector(".cover span:nth-child(1)");
 const coverName = document.querySelector(".cover span:nth-child(2)");
 
 let songIndex = 0;
+let isShuffle = false;
+let isRepeat = false;
+
+audio.volume = volumeSlider.value;
 
 window.addEventListener("load", () => {
     loadSong(songIndex);
@@ -49,30 +57,85 @@ playPauseBtn.addEventListener("click", () => {
     }
 });
 
-
 const prevSongPlay = () => {
-    songIndex--;
-    if (songIndex < 0) {
-        songIndex = songData.length - 1;
-
+    if (isRepeat) {
+        // If repeat is enabled, replay the current song
+        loadSong(songIndex);
+        playSong();
+    } else {
+        songIndex--;
+        if (songIndex < 0) {
+            songIndex = songData.length - 1;
+        }
+        loadSong(songIndex);
+        playSong();
     }
-
-    loadSong(songIndex);
-    playSong();
 }
 
 const nextSongPlay = () => {
-    songIndex++;
-    console.log("Song Index:" + songIndex)
-    if (songIndex === songData.length) {
-        songIndex = 0;
+    if (isRepeat) {
+        // If repeat is enabled, replay the current song
+        loadSong(songIndex);
+        playSong();
+    } else {
+        songIndex++;
+        if (songIndex === songData.length) {
+            songIndex = 0;
+        }
+        loadSong(songIndex);
+        playSong();
     }
-    loadSong(songIndex);
-    playSong();
+
 }
 
 prevBtn.addEventListener("click", prevSongPlay);
 nextBtn.addEventListener("click", nextSongPlay);
+
+shuffleBtn.addEventListener("click", () => {
+    isShuffle = !isShuffle;
+    shuffleBtn.classList.toggle('text-gradient', isShuffle);
+    if (isShuffle) {
+        // Get the current song index
+        const currentSongIndex = songIndex;
+
+        // Create a temporary array starting from the next song
+        const tempArray = [...songData.slice(currentSongIndex + 1), ...songData.slice(0, currentSongIndex + 1)];
+
+        // Shuffle the temporary array
+        shuffleArray(tempArray);
+
+        // Combine the shuffled part and the remaining part
+        const shuffledArray = [...tempArray.slice(-currentSongIndex - 1), ...tempArray.slice(0, -currentSongIndex - 1)];
+
+        // Update the songData array with the shuffled order
+        for (let i = 0; i < songData.length; i++) {
+            songData[i] = shuffledArray[i];
+        }
+
+        // If currently playing a song, reload the song with the new shuffled array
+        if (container.classList.contains('pause')) {
+            loadSong(songIndex);
+            playSong();
+        }
+    }
+});
+
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+repeatBtn.addEventListener("click", () => {
+    isRepeat = !isRepeat;
+    repeatBtn.classList.toggle('text-gradient', isRepeat);
+});
+
+volumeSlider.addEventListener('input', () => {
+    audio.volume = volumeSlider.value;
+});
 
 audio.addEventListener("timeupdate", (e) => {
     const currentTime = e.target.currentTime;

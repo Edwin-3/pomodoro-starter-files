@@ -49,7 +49,6 @@ window.addEventListener('load', () => {
   `;
 
     stopwatchIcon.addEventListener('click', function () {
-
         isStopwatchVisible = !isStopwatchVisible;
         if (isStopwatchVisible) {
             // Remove the cover div and everything inside it
@@ -69,16 +68,16 @@ window.addEventListener('load', () => {
 
     function initializeStopWatch() {
         const timer = {
+            mode: 'pomodoro',
             pomodoro: 25,
             shortBreak: 5,
             longBreak: 15,
             longBreakInterval: 4,
-        };
-
-        timer.remainingTime = {
-            total: timer.pomodoro * 60,
-            minutes: timer.pomodoro,
-            seconds: 0,
+            remainingTime: {
+                total: 25 * 60,
+                minutes: 25,
+                seconds: 0,
+            },
         };
 
         let interval;
@@ -87,9 +86,7 @@ window.addEventListener('load', () => {
         mainButton.addEventListener('click', () => {
             const { action } = mainButton.dataset;
             if (action === 'start') {
-                if (!timer.mode) {
-                    switchMode('pomodoro');
-                }
+
                 startTimer();
             } else {
                 stopTimer();
@@ -111,20 +108,30 @@ window.addEventListener('load', () => {
 
         function switchMode(mode) {
             timer.mode = mode;
+
+            // Convert timer[mode] to a number explicitly
+            const modeDuration = parseInt(timer[mode], 10);
+
             timer.remainingTime = {
-                total: timer[mode] * 60,
-                minutes: timer[mode],
+                total: modeDuration * 60,
+                minutes: modeDuration,
                 seconds: 0,
             };
 
             document.querySelectorAll('button[data-mode]')
                 .forEach(e => e.classList.remove('active'));
-            document.querySelector(`[data-mode="${mode}"]`).classList.add('active');
+
+            const modeButton = document.querySelector(`[data-mode="${mode}"]`);
+            if (modeButton) {
+                modeButton.classList.add('active');
+            }
+
             document.body.style.backgroundColor = `var(--${mode})`;
 
             updateClock();
-
         }
+
+
 
         function getRemainingTime(endTime) {
             const currentTime = Date.parse(new Date());

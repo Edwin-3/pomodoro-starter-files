@@ -47,7 +47,12 @@
                     <span class="song-name text-gradient">Fathela</span>
                     <span class="song-artist text-gradient">Nyashinski</span>
                 </div>
-                <!-- Include any relevant information or icons here -->
+                <!-- Add or modify the volume control div within the "player-body" div -->
+                <div class="volume-control">
+                    <div class="volume-bars" id="volumeBars"></div>
+                    <input type="range" id="volumeSlider" min="0" max="100" step="1" value="50">
+                </div>
+
             </div>
             <div class="song-duration">
                 <div class="song-time">
@@ -61,7 +66,7 @@
                 </div>
             </div>
             <div class="controls">
-                <button class="player-btn" type="button">
+                <button class="player-btn shuffle" type="button">
                     <i class="fas fa-shuffle"></i>
                 </button>
                 <button class="player-btn prev-btn" type="button">
@@ -73,7 +78,7 @@
                 <button class="player-btn next-btn" type="button">
                     <i class="fas fa-forward"></i>
                 </button>
-                <button class="player-btn" type="button">
+                <button class="player-btn repeat" type="button">
                     <i class="fas fa-repeat"></i>
                 </button>
             </div>

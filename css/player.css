@@ -108,6 +108,8 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+
 }
 
 .current-song {
@@ -126,7 +128,8 @@ html {
     background-color: #272829;
     border-radius: 1rem;
     padding: 1.5rem;
-    overflow: hidden;
+    /* overflow-y: auto; */
+    position: relative;
 
 }
 
@@ -203,6 +206,7 @@ html {
     -webkit-text-fill-color: transparent; */
 }
 
+
 .pomodoro-timer {
     border: 0.2rem solid rgba(255, 255, 255, 0.1);
     background-color: #272829;
@@ -261,6 +265,7 @@ html {
     color: #fff;
 
 }
+
 
 .player-footer {
     width: 30%;

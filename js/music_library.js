@@ -33,7 +33,7 @@ const musicData = [
         name: 'Song 5',
         artist: "Urban",
         description: 'Chilled | Afro | Jazz | Lofi',
-        src: "song2",
+        src: "stickwitchu",
     },
     {
         imgSrc: '/assets/images/mother earth.jfif',
@@ -47,14 +47,14 @@ const musicData = [
         name: 'Song 7',
         artist: "Urban",
         description: 'Chilled | Afro | Jazz | Lofi',
-        src: "song2",
+        src: "christian-lofi",
     },
     {
         imgSrc: '/assets/images/lovelofi.jfif',
         name: 'Song 8',
         artist: "Urban",
         description: 'Chilled | RnB | Love | Lofi',
-        src: "stickwitchu",
+        src: "reggaelofi",
     },
     {
         imgSrc: '/assets/images/desktop.jpg',

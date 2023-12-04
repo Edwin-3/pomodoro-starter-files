@@ -33,9 +33,15 @@
 }
 
 #tasks {
-    overflow-y: scroll;
-
+    max-height: 200px; 
+    overflow-y: auto;
+    
 }
+#tasks::-webkit-scrollbar{
+    display: none;
+}
+
+
 
 
 #tasks .task {
