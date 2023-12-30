@@ -1,5 +1,5 @@
 //Create a copy of the original array
-const songData = musicData.slice();
+const songData = musicData;
 
 const container = document.querySelector(".container");
 const songName = document.querySelector(".song-name");
@@ -13,6 +13,7 @@ const nextBtn = document.querySelector(".next-btn");
 const repeatBtn = document.querySelector(".repeat");
 const shuffleBtn = document.querySelector(".shuffle");
 const volumeSlider = document.getElementById('volumeSlider');
+const volumeBars = document.querySelectorAll('.volume-bar');
 
 
 //music display
@@ -25,8 +26,10 @@ const coverName = document.querySelector(".cover span:nth-child(2)");
 let songIndex = 0;
 let isShuffle = false;
 let isRepeat = false;
+let isDragging = false;
+let currentBar = null;
 
-audio.volume = volumeSlider.value;
+audio.volume = volumeSlider.value / 100;
 
 window.addEventListener("load", () => {
     loadSong(songIndex);
@@ -43,6 +46,7 @@ const playSong = () => {
     playPauseBtn.firstElementChild.className = "fa-solid fa-pause";
     audio.play();
 };
+
 const pauseSong = () => {
     container.classList.remove('pause');
     playPauseBtn.firstElementChild.className = "fa-solid fa-play";
@@ -120,7 +124,6 @@ shuffleBtn.addEventListener("click", () => {
     }
 });
 
-
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -134,7 +137,43 @@ repeatBtn.addEventListener("click", () => {
 });
 
 volumeSlider.addEventListener('input', () => {
-    audio.volume = volumeSlider.value;
+    audio.volume = volumeSlider.value / 100;
+
+});
+
+volumeBars.forEach((bar, index) => {
+    bar.addEventListener('click', () => {
+        const volume = (index + 1) * 20 / 100;
+        audio.volume = volume;
+        volumeBars.forEach((bar, i) => {
+            if ((i + 1) * 20 <= volume * 100) {
+                bar.classList.add('green');
+            } else {
+                bar.classList.remove('green');
+            }
+        });
+    });
+    bar.style.left = `${index * (100 / 5)}%`;
+});
+
+audio.addEventListener('volumechange', () => {
+    const volume = audio.volume;
+    volumeBars.forEach((bar, index) => {
+        bar.classList.remove('green');
+        if ((index + 1) * 20 <= volume * 100) {
+            bar.classList.add('green');
+        }
+    });
+});
+
+audio.addEventListener('volumechange', () => {
+    const volume = audio.volume;
+    volumeBars.forEach((bar, index) => {
+        bar.classList.remove('green');
+        if ((index + 1) * 20 <= volume * 100) {
+            bar.classList.add('green');
+        }
+    });
 });
 
 audio.addEventListener("timeupdate", (e) => {

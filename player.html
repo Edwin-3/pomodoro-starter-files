@@ -16,6 +16,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=Roboto:wght@100;300;400;500&display=swap"
         rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700&display=swap" rel="stylesheet">    
 </head>
 
 <body>
@@ -48,8 +51,14 @@
                     <span class="song-artist text-gradient">Nyashinski</span>
                 </div>
                 <!-- Add or modify the volume control div within the "player-body" div -->
-                <div class="volume-control">
-                    <div class="volume-bars" id="volumeBars"></div>
+                <div class="volume-control" id="volumeControl">
+                    <div class="volume-bars" id="volumeBars">
+                        <div class="volume-bar" style="height: 20%;"></div>
+                        <div class="volume-bar" style="height: 40%;"></div>
+                        <div class="volume-bar" style="height: 60%;"></div>
+                        <div class="volume-bar" style="height: 80%;"></div>
+                        <div class="volume-bar" style="height: 100%;"></div>
+                    </div>
                     <input type="range" id="volumeSlider" min="0" max="100" step="1" value="50">
                 </div>
 

@@ -165,6 +165,8 @@ html {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1.5rem;
+    font-size: 2rem;
+
 }
 
 .song-details {
@@ -200,12 +202,38 @@ html {
     font-weight: 400;
 }
 
-.song-info {
-    font-size: 2rem;
-    /* -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; */
+.volume-control {
+    position: relative;
+    max-width: 6rem;
 }
 
+.volume-control input {
+    width: 100%;
+}
+
+.volume-control .volume-bars {
+    display: flex;
+    height: 24px;
+    overflow: hidden;
+    position: relative;
+    margin-right: 2px;
+}
+
+.volume-bar {
+    position: absolute;
+    bottom: 0;
+    width: calc(100% / 5);
+    cursor: pointer;
+    background-color: #333;
+}
+
+.volume-bar:nth-child(-n + 2) {
+    background-color: #333;
+}
+
+.volume-bar.green {
+    background-color: green;
+}
 
 .pomodoro-timer {
     border: 0.2rem solid rgba(255, 255, 255, 0.1);
@@ -215,6 +243,7 @@ html {
     letter-spacing: 1px;
     font-size: 15px;
     font-family: poppins;
+    cursor: pointer;
 }
 
 .song-time {
