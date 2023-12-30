@@ -34,10 +34,11 @@ window.addEventListener('load', () => {
             </button>
         </div>
         <div class="clock" id="js-clock">
-            <span id="js-minutes">25</span>
+            <input id="js-minutes" type="text" value="25">
             <span class="separator">:</span>
-            <span id="js-seconds">00</span>
+            <input id="js-seconds" type="text" value="00">
         </div>
+
         <button class="main-button" data-action="start" id="js-btn">
         Start
         </button>
@@ -84,6 +85,19 @@ window.addEventListener('load', () => {
         };
 
         let interval;
+
+        // Set up event listeners for minutes and seconds input fields
+        const minutesInput = document.getElementById('js-minutes');
+        const secondsInput = document.getElementById('js-seconds');
+
+        minutesInput.addEventListener('input', function () {
+            updateTimer('minutes', this.value);
+            console.log('Input Minutes', minutesInput)
+        });
+
+        secondsInput.addEventListener('input', function () {
+            updateTimer('seconds', this.value);
+        });
 
         // Start button click event listener
         const mainButton = document.getElementById('js-btn');
@@ -195,6 +209,22 @@ window.addEventListener('load', () => {
             updatePomodoroDisplay(minutes, seconds);
 
         }
+
+        function updateTimer(unit, value) {
+            // Validate the input (you can add more validation if needed)
+            const intValue = parseInt(value, 10);
+            if (!isNaN(intValue)) {
+                // Update the timer based on the edited unit
+                if (unit === 'minutes') {
+                    timer.remainingTime.minutes = intValue;
+                } else if (unit === 'seconds') {
+                    timer.remainingTime.seconds = intValue;
+                }
+                // Update the clock display
+                updateClock();
+            }
+        }
+
 
         document.addEventListener('DOMContentLoaded', () => {
             switchMode('pomodoro');
